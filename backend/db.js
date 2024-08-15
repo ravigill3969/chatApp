@@ -46,6 +46,8 @@ const setupEventListeners = (conn) => {
     console.log("MongoDB connection reestablished");
   });
 
+  
+
   // Handle when the Node process is about to exit
   process.on("SIGINT", async () => {
     await conn.connection.close();
