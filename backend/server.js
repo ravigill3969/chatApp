@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import { config } from "dotenv";
+import cors from "cors";
 
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
@@ -8,6 +9,11 @@ import userRoutes from "./routes/user.routes.js";
 import connectDB from "./db.js";
 
 config();
+
+cors({
+  origin: "http://localhost:3000",
+  credentials: true,
+});
 
 const app = express();
 app.use(express.json());
