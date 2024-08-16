@@ -21,7 +21,7 @@ const useSendMessage = () => {
       );
       const data = await res.json();
       if (data.error) throw new Error(data);
-      console.log(data);
+     
       //message is not iterable
       
       setMessages([...messages, data]);
