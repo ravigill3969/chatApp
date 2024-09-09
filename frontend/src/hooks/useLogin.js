@@ -21,10 +21,12 @@ const useLogin = () => {
           password,
         }),
       });
+    
       const data = await res.json();
-      if (data.error) {
+      if (!res.ok) {
         throw new Error(data.error);
       }
+      
       //localStorage
       localStorage.setItem("chat-user", JSON.stringify(data));
       //context
