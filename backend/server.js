@@ -25,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 
+
 const PORT = process.env.PORT || 8000;
 
 app.use("/api/auth", authRoutes);

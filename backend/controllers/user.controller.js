@@ -6,8 +6,9 @@ export  const getUsersForSidebar = async (req, res) => {
       "-password"
     );
     res.status(200).json(allUsers);
+    console.log(allUsers)
   } catch (error) {
-    console.log("Error getting users:", error);
+    
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
